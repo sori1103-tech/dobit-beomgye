@@ -630,3 +630,6 @@ html.pf-open,html.pf-open body{overflow:hidden}
 .footer-brand img{height:64px;width:auto}
 @media(max-width:959px){.logo img{height:44px}}
 @media(max-width:480px){.logo img{height:40px}}
+
+/* 첫 화면 소개 문구: 매장명이 줄바꿈으로 갈라지지 않게 (2026-11-02) */
+.hero-text .nowrap{white-space:nowrap}
