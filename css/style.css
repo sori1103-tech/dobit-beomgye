@@ -633,3 +633,74 @@ html.pf-open,html.pf-open body{overflow:hidden}
 
 /* 첫 화면 소개 문구: 매장명이 줄바꿈으로 갈라지지 않게 (2026-11-02) */
 .hero-text .nowrap{white-space:nowrap}
+
+/* ===== 채용 페이지 (2026-11-09) — 기존 색 토큰만 사용 ===== */
+/* 성장 과정 */
+.recruit-steps{list-style:none;display:grid;grid-template-columns:1fr;gap:10px;max-width:960px;margin:0 auto;counter-reset:none}
+.recruit-steps li{position:relative;background:var(--bg-card);border:1px solid var(--line-soft);padding:16px 18px;display:flex;align-items:baseline;gap:12px}
+.recruit-steps .step{flex:none;width:58px;font-size:11.5px;letter-spacing:.14em;color:var(--accent);font-weight:700}
+.recruit-steps b{font-size:16.5px}
+.recruit-steps small{margin-left:auto;font-size:13px;color:var(--ink-soft)}
+.recruit-steps li:last-child{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+.recruit-steps li:last-child .step,.recruit-steps li:last-child small{color:rgba(255,255,255,.85)}
+@media(min-width:720px){
+  .recruit-steps{grid-template-columns:repeat(5,1fr);gap:14px}
+  .recruit-steps li{flex-direction:column;align-items:center;text-align:center;gap:4px;padding:20px 10px}
+  .recruit-steps .step{width:auto}
+  .recruit-steps small{margin-left:0}
+  .recruit-steps li:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--accent);font-weight:700;z-index:2}
+}
+/* 근무시간 */
+.recruit-hours{max-width:760px;margin:0 auto 22px;background:var(--bg-card);border:1px solid var(--line-soft);padding:18px 22px}
+.recruit-hours-title{font-size:13px;letter-spacing:.12em;color:var(--accent-dark);font-weight:700;margin-bottom:8px}
+.recruit-hours ul{list-style:none}
+.recruit-hours li{display:flex;gap:14px;font-size:14.5px;padding:5px 0;border-top:1px solid var(--line-soft)}
+.recruit-hours li:first-child{border-top:0}
+.recruit-hours b{flex:0 0 64px;color:var(--ink)}
+.recruit-hours em{font-style:normal;font-size:12.5px;color:var(--accent-dark);margin-left:6px}
+/* 모집 카드 · 급여표 */
+.recruit-jobcards .card-body{padding:24px 22px}
+.recruit-job h3{font-size:19px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.recruit-badge{font-size:12px;font-weight:700;color:#fff;background:var(--accent-dark);padding:3px 10px;border-radius:999px;letter-spacing:.02em}
+.card-body p.recruit-job-lead{font-size:14px;color:var(--ink)}
+.recruit-pay{margin-top:16px}
+.recruit-pay caption{caption-side:top;text-align:left;font-size:13px;font-weight:700;color:var(--accent-dark);padding-bottom:6px}
+.recruit-pay td{font-size:14.5px}
+.recruit-table td small{font-size:12px;color:var(--ink-soft);font-weight:500}
+.recruit-curri-lead{font-size:14.5px;color:var(--ink-soft);margin:0 0 14px}
+/* 혜택·안내 목록 */
+.recruit-perks{list-style:none;max-width:760px;margin:18px auto 0;display:grid;gap:8px}
+.recruit-perks li{background:var(--bg-card);border:1px solid var(--line-soft);padding:12px 16px 12px 36px;position:relative;font-size:14.5px}
+.recruit-perks li::before{content:"✓";position:absolute;left:14px;color:var(--accent);font-weight:700}
+@media(min-width:720px){.recruit-perks-grid{grid-template-columns:repeat(2,1fr)}}
+.recruit-curri{max-width:560px;margin:22px auto 0;text-align:center}
+.recruit-curri img{width:100%;border:1px solid var(--line-soft);background:#fff}
+.recruit-curri figcaption{margin-top:8px;font-size:13px;color:var(--ink-soft)}
+/* 문자 지원 */
+.recruit-sms{max-width:420px;margin:0 auto 20px;background:var(--bg-card);border:1px solid var(--line-soft);padding:16px 20px}
+.recruit-sms ol{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.recruit-sms li{font-size:13.5px;background:var(--bg);border:1px solid var(--line);padding:3px 10px;border-radius:999px}
+.recruit-contact .recruit-cta-btns{margin-top:12px;justify-content:flex-start}
+.recruit-apply{max-width:760px;margin:0 auto}
+/* 사진 갤러리 (모바일 2열) */
+.recruit-gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:22px}
+@media(min-width:720px){.recruit-gallery-grid{grid-template-columns:repeat(3,1fr);gap:10px}}
+@media(min-width:960px){.recruit-gallery-grid{grid-template-columns:repeat(4,1fr)}}
+.recruit-gallery-grid figure{margin:0;background:var(--bg-card);border:1px solid var(--line-soft)}
+.rg-item{display:block;overflow:hidden;background:var(--line-soft)}
+.rg-item img{width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .35s}
+.rg-item:hover img,.rg-item:focus-visible img{transform:scale(1.04)}
+.recruit-gallery-grid figcaption{padding:7px 10px;font-size:12.5px;color:var(--ink-soft)}
+.recruit-gallery-note{margin-top:10px;text-align:center;font-size:13px;color:var(--ink-soft)}
+/* 사진 크게 보기 (CSS :target, 스크립트 없음) */
+.lightbox{display:none;position:fixed;inset:0;z-index:1100;align-items:center;justify-content:center;padding:56px 16px}
+.lightbox:target{display:flex}
+.lb-bg{position:absolute;inset:0;background:rgba(40,32,25,.9)}
+.lightbox figure{position:relative;margin:0;max-width:min(94vw,1100px);text-align:center}
+.lightbox img{display:block;margin:0 auto;width:auto;max-width:100%;max-height:78vh;min-width:min(80vw,420px);object-fit:contain;background:var(--bg-card)}
+.lightbox figcaption{margin-top:10px;font-size:14px;color:#fff}
+.lb-close{position:absolute;top:10px;right:12px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:32px;line-height:1;color:#fff}
+/* 갤러리 배치: 근무지(첫 사진 2칸) · 교육(3열) */
+.rg-feature figure:first-child{grid-column:span 2}
+.rg-feature figure:first-child img{aspect-ratio:2/1}
+@media(min-width:960px){.rg-feature,.rg-3{grid-template-columns:repeat(3,1fr)}}
