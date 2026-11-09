@@ -716,13 +716,4 @@ html.pf-open,html.pf-open body{overflow:hidden}
 .style-sub{font-size:16px;margin:26px 0 12px;color:var(--ink)}
 .sec-head + .style-sub{margin-top:0}
 .gallery-grid img.sty.fit{object-fit:contain;background:var(--bg-card)}
-.gallery-grid + .gallery-grid,.more-photos + .gallery-grid{margin-top:26px}
-/* 디자이너별 사진 「더 보기」 (처음 6장 이후) */
-.more-photos{margin-top:14px}
-.more-photos[open]{margin-top:8px}
-.more-photos summary{list-style:none;cursor:pointer;display:block;width:max-content;max-width:100%;margin:0 auto;font-size:13.5px;font-weight:600;border:1px solid var(--line);padding:9px 20px;color:var(--ink-soft);transition:.2s;letter-spacing:.02em}
-.more-photos summary::-webkit-details-marker{display:none}
-.more-photos summary::after{content:" ▾"}
-.more-photos summary:hover{border-color:var(--accent);color:var(--accent-dark)}
-.more-photos[open] summary{display:none}
 .style-strip img.fit{object-fit:contain;background:var(--bg-card)}
