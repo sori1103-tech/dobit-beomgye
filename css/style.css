@@ -695,16 +695,23 @@ html.pf-open,html.pf-open body{overflow:hidden}
 .lightbox.lb-tall{overflow-y:auto;align-items:flex-start}
 .lightbox.lb-tall img{max-height:none;width:min(92vw,760px)}
 
-/* 디자이너 시술 스타일 사진 (세로 3:4 · 모바일 가로 스와이프) */
+/* 디자이너 소개 · 디자이너별 시술 스타일 줄 (세로 3:4 · 모바일 가로 스와이프) */
 .style-strip{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 8px)/2.2);gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:6px}
 .style-strip figure{margin:0;scroll-snap-align:start}
 .style-strip a{display:block;overflow:hidden}
-.style-strip img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;transition:transform .35s}
+.style-strip img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:50% 30%;transition:transform .35s}
 .style-strip a:hover img{transform:scale(1.03)}
 .style-strip figcaption{font-size:12.5px;color:var(--ink-soft);padding:8px 2px 4px}
 @media(min-width:720px){.style-strip{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);overflow:visible;padding-bottom:0}}
 @media(min-width:960px){.style-strip{grid-template-columns:repeat(5,1fr)}}
-.gallery-sub{font-size:15px;letter-spacing:.04em;margin:24px 0 4px}
-.gallery-sub-desc{font-size:13.5px;color:var(--ink-soft);margin-bottom:12px}
-.gallery-sub-desc a{color:var(--accent-dark);text-decoration:underline;text-underline-offset:3px}
 .designer-styles-link{display:inline-block;margin-top:10px;margin-left:4px;font-size:13px;font-weight:700;color:var(--accent-dark);text-decoration:underline;text-underline-offset:3px}
+
+/* 시술 사진 카드 (갤러리·시술 페이지 공통): 사진 → 스타일명 → 설명 → 담당 디자이너 */
+.gallery-grid figure > a{display:block;overflow:hidden}
+.gallery-grid img.sty{aspect-ratio:3/4;object-position:50% 30%;transition:transform .35s}
+.gallery-grid figure > a:hover img.sty{transform:scale(1.03)}
+.gallery-grid figcaption b{display:block;color:var(--ink);font-size:13.5px;font-weight:700;margin-bottom:2px}
+.gallery-grid figcaption a.by{display:table;margin-top:5px;font-size:12px;color:var(--accent-dark);text-decoration:none;border-bottom:1px solid var(--line)}
+.gallery-grid figcaption a.by:hover{color:var(--ink)}
+.style-sub{font-size:16px;margin:26px 0 12px;color:var(--ink)}
+.sec-head + .style-sub{margin-top:0}
